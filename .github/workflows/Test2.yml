@@ -12,7 +12,7 @@ on:
         description: 'Deploy or Delete Apps'
         if: ${{ github.event.inputs.env, =='SIT')
         type: choice
-        required: ${{ github.event.inputs.env, =='SIT')
+        required: false
         options: # Only show options if 'SIT' is selected
          - Deploy
          - Delete
