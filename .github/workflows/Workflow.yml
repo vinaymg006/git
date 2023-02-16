@@ -15,5 +15,9 @@ on:
         options: 
         - mysql
         - postgresql
-        - mongodb
-          
+        - mongod
+jobs:
+  test:
+    steps:
+      -name: testing
+       run: echo " user input"
