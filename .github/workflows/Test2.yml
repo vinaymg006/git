@@ -6,8 +6,8 @@ on:
         type: choice
         required: true
         options:
-        - SIT
         - UAT
+        - SIT
       op:
         description: 'Deploy or Delete Apps'
         type: choice
