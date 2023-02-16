@@ -26,7 +26,7 @@ on:
         description: 'Select the OS Version'
         required: false 
         if: ${{github.event.inputs.OS-Type == 'SLES'}}
-         type: choice
+        type: choice
          
         options: 
         - SLES15SP3
