@@ -17,6 +17,7 @@ on:
         description: 'Select the OS Type'
         required: false
         if: ${{github.event.inputs.Solution == 'PCE'}}
+        default: 'SLES'
         type: Choice
         
         options: 
