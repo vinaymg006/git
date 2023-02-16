@@ -8,18 +8,7 @@ on:
         options:
         - SIT
         - UAT
-      op:
-        description: 'Deploy or Delete Apps'
-        type: choice
-        required: ${{contains('SIT', inputs.env)}}
         
-        options: # Only show options if 'SIT' is selected
-        - Deploy
-        - Delete
-        
-      ver:
-        description: 'Type the app version'
-        required: true
 jobs:
   test:
     steps:
