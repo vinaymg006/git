@@ -10,12 +10,13 @@ on:
         - SIT
       op:
         description: 'Deploy or Delete Apps'
+        if: contains(inputs.env, 'SIT')
         type: choice
         
         options: # Only show options if 'SIT' is selected
          - Deploy
          - Delete
-        if: contains(inputs.env, 'SIT')
+        
       
         
        
