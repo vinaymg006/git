@@ -19,5 +19,5 @@ on:
 jobs:
   test:
     steps:
-      -name: testing
-       run: echo " user input"
+      - name: testing
+        run: echo " user input"
