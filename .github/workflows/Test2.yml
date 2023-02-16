@@ -11,7 +11,7 @@ on:
       op:
         description: 'Deploy or Delete Apps'
         type: choice
-        required: ${{contains('SIT', inputs.env)}}
+       
       
         
 jobs:
