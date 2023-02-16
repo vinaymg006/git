@@ -4,13 +4,15 @@ on:
       Solutions:
         description: 'Select the environment to deploy to'
         required: true
+        default: 'PCE'
         type: Choice
         options:
         - HPC
         - PCE
       database:
         description: 'Select the database to use'
-        required: false
+        required: true
+        default: Choice
         if: ${{ github.event.inputs.environment == 'production' }}
         type: Choice
         options: 
