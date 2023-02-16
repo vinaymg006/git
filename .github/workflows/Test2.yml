@@ -8,6 +8,11 @@ on:
         options:
         - SIT
         - UAT
+      op:
+        description: 'Deploy or Delete Apps'
+        type: choice
+        required: ${{contains('SIT', inputs.env)}}
+      
         
 jobs:
   test:
