@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+    inputs:
+      Solutions:
+        description: 'Select the environment to deploy to'
+        required: true
+        type: Choice
+        options:
+        - HPC
+        - PCE
+      database:
+        description: 'Select the database to use'
+        required: false
+        if: ${{ github.event.inputs.environment == 'production' }}
+        options: 
+        - mysql
+        - postgresql
+        - mongodb
+          
