@@ -1,24 +1,58 @@
+name: Build-OS-Images
+
+run-name: Building-${{github.event.inputs.Solution}}-${{github.event.inputs.Instance}}-OS-Image
+
 on:
   workflow_dispatch:
     inputs:
-      Solutions:
-        description: 'Select the environment to deploy to'
+      Solution:
+        description: 'Select the Solution'
         required: true
-        default: 'PCE'
-        type: Choice
+        default: 'HPC' 
+        type: choice
         options:
         - HPC
         - PCE
-      database:
-        description: 'Select the database to use'
-        required: true
-        default: 'mysql'
-        if: ${{ github.event.inputs.environment == 'production' }}
-        type: Choice
+      OS-Type:
+        description: 'Select the OS Type'
+        required: false
+        if: ${{github.event.inputs.Solution == 'PCE'}}
+         type: choice
+        
         options: 
-        - mysql
-        - postgresql
-        - mongod
+        - SLES
+        - SLES-2
+      OS-Version:
+        description: 'Select the OS Version'
+        required: false 
+        if: ${{github.event.inputs.OS-Type == 'SLES'}}
+         type: choice
+         
+        options: 
+        - SLES15SP3
+      Instance:
+        description: 'Select the Instance Type'
+        required: false 
+        if: ${{github.event.inputs.OS-Version == 'SLES15SP3'}}
+        type: choice
+       
+        options: 
+        - CDM
+        - C2 
+        - MHN
+        - A2
+        - ERE
+        - K8
+      Img-Type:
+        description: 'Select the Image Type'
+        required: true 
+        
+        type: choice
+         
+        options:
+        - baremetal
+        - VM 
+
 jobs:
   test:
     steps:
