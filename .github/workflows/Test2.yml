@@ -10,9 +10,9 @@ on:
         - SIT
       op:
         description: 'Deploy or Delete Apps'
-        if: contains(inputs.env, 'SIT')
+        if: ${{ github.event.inputs.env, =='SIT')
         type: choice
-        
+        required: ${{ github.event.inputs.env, =='SIT')
         options: # Only show options if 'SIT' is selected
          - Deploy
          - Delete
