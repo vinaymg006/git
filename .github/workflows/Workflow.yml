@@ -12,7 +12,7 @@ on:
       database:
         description: 'Select the database to use'
         required: true
-        default: Choice
+        default: 'mysql'
         if: ${{ github.event.inputs.environment == 'production' }}
         type: Choice
         options: 
