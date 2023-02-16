@@ -11,10 +11,11 @@ on:
       op:
         description: 'Deploy or Delete Apps'
         type: choice
-        required: true
+        required: ${{ contains( 'SIT' , inputs.env)}}
         options: # Only show options if 'SIT' is selected
         - Deploy
         - Delete
+      
         
        
       
