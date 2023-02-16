@@ -16,7 +16,7 @@ on:
         options: # Only show options if 'SIT' is selected
         - Deploy
         - Delete
-        if: contains('SIT', inputs.env)
+        
       ver:
         description: 'Type the app version'
         required: true
