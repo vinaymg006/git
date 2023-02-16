@@ -1,0 +1,25 @@
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: 'Select the Environment'
+        type: choice
+        required: true
+        options:
+        - SIT
+        - UAT
+      op:
+        description: 'Deploy or Delete Apps'
+        type: choice
+        required: true
+        options: ${{ if eq(inputs.env, 'SIT') }} # Only show options if 'SIT' is selected
+        - Deploy
+        - Delete
+      ver:
+        description: 'Type the app version'
+        required: true
+jobs:
+  test:
+    steps:
+      - name: testing
+        run: echo " user input"
