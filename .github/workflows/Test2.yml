@@ -3,17 +3,17 @@ on:
     inputs:
       env:
         description: 'Select the Environment'
-        type: choice
+        type: string
         required: true
         options:
         - UAT
-            description: 'UAT environment'
+           
         - SIT
-            description: 'SIT environment'
+            
       op:
         description: 'Deploy or Delete Apps'
         if: ${{ github.event.inputs.env, =='SIT')
-        type: choice
+        type: string
         required: false
         options: # Only show options if 'SIT' is selected
          - Deploy
